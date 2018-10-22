@@ -30,6 +30,15 @@ public class Bersaglio {
 //     classe che estende JPanel settare il loyut della finestra
 class JBersaglio extends JPanel {
 
+//        dichiariamo il numero di cerchi
+    int cerchi = 5;
+//        dichiariamo tre variabili int
+//        le coordinate x e y, il diametro del cerchio 
+    int x = 0, y = 0, diametro = 300;
+//        dichiariamo delta come il rapporto
+//        tra il diametro e il doppio dei cerchi -3
+    int delta = diametro / (2 * cerchi) - 3;
+
     public JBersaglio() {
 //        per settare il colore di sfondo della finestra
         setBackground(Color.BLACK);
@@ -39,20 +48,12 @@ class JBersaglio extends JPanel {
 
 //    Tracciamento della grafica
 //    Creiamo i cerchi
-///    Li passiamo come parametro la parte grafica
+//    Li passiamo come parametro la parte grafica
     @Override
     public void paintComponent(Graphics page) {
 //        Devo richiamare al paintComponent già esistente
 //        che mi passa la parte grafica
         super.paintComponent(page);
-//        dichiariamo il numero di cerchi
-        int cerchi = 5;
-//        dichiariamo tre variabili int
-//        le coordinate x e y, il diametro del cerchio 
-        int x = 0, y = 0, diametro = 300;
-//        dichiariamo delta come il rapporto
-//        tra il diametro e il doppio dei cerchi -3
-        int delta = diametro / (2 * cerchi) - 3;
 
         for (int i = 0; i < cerchi; i++) {
             if (i % 2 == 0) {
